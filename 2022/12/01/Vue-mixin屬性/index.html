@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue筆記 - mixin屬性 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="mixin混入 功能：將複用率高的代碼混入以減少代碼重複率 Step1.創建mixin.js,新增export代碼   12345678&#x2F;&#x2F;mixin.js (自定義檔名)    export const a&amp;#123;        methods:&amp;#123;            showname()&amp;#123;                alert(this.name)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue筆記 - mixin屬性">
+<meta property="og:url" content="http://example.com/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mixin混入 功能：將複用率高的代碼混入以減少代碼重複率 Step1.創建mixin.js,新增export代碼   12345678&#x2F;&#x2F;mixin.js (自定義檔名)    export const a&amp;#123;        methods:&amp;#123;            showname()&amp;#123;                alert(this.name)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-01T07:49:27.000Z">
+<meta property="article:modified_time" content="2022-12-01T13:30:14.488Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Vue-mixin屬性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/" class="article-date">
+  <time class="dt-published" datetime="2022-12-01T07:49:27.000Z" itemprop="datePublished">2022-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue筆記 - mixin屬性
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mixin混入"><a href="#mixin混入" class="headerlink" title="mixin混入"></a>mixin混入</h1><hr>
+<h2 id="功能：將複用率高的代碼混入以減少代碼重複率"><a href="#功能：將複用率高的代碼混入以減少代碼重複率" class="headerlink" title="功能：將複用率高的代碼混入以減少代碼重複率"></a>功能：將複用率高的代碼混入以減少代碼重複率</h2><ul>
+<li><h2 id="Step1-創建mixin-js-新增export代碼"><a href="#Step1-創建mixin-js-新增export代碼" class="headerlink" title="Step1.創建mixin.js,新增export代碼"></a>Step1.創建mixin.js,新增export代碼</h2>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mixin.js (自定義檔名)</span></span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">const</span> a&#123;</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">showname</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="Step2-引入至組件"><a href="#Step2-引入至組件" class="headerlink" title="Step2.引入至組件"></a>Step2.引入至組件</h2><ul>
+<li><h3 id="1-import-物件名稱-from-路徑位址"><a href="#1-import-物件名稱-from-路徑位址" class="headerlink" title="1.import {物件名稱} from 路徑位址"></a>1.import {物件名稱} from 路徑位址</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;a&#125; <span class="keyword">from</span> <span class="string">&#x27;../mixin.js&#x27;</span> <span class="comment">//路徑位址</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="2-新增mixins數組項-內部填入上面的物件名稱"><a href="#2-新增mixins數組項-內部填入上面的物件名稱" class="headerlink" title="2.新增mixins數組項,內部填入上面的物件名稱"></a>2.新增mixins數組項,內部填入上面的物件名稱</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="attr">mixins</span>:[</span><br><span class="line">    a</span><br><span class="line">]</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+<li><h3 id="3-此時在引入之組件內即可使用’a’的內容物"><a href="#3-此時在引入之組件內即可使用’a’的內容物" class="headerlink" title="3.此時在引入之組件內即可使用’a’的內容物"></a>3.此時在引入之組件內即可使用’a’的內容物</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> @<span class="attr">click</span>=<span class="string">&#x27;showname&#x27;</span>&gt;</span>點我彈出小明<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="如果組件內已經有相同名稱的data-methods，則以組件的data-methods為主‧而mounted則都會觸發。"><a href="#如果組件內已經有相同名稱的data-methods，則以組件的data-methods為主‧而mounted則都會觸發。" class="headerlink" title="如果組件內已經有相同名稱的data,methods，則以組件的data,methods為主‧而mounted則都會觸發。"></a><strong>如果組件內已經有相同名稱的data,methods，則以組件的data,methods為主‧而mounted則都會觸發。</strong></h2><h2 id="以上為局部mixin，如要採用全局mixin請採用以下方法"><a href="#以上為局部mixin，如要採用全局mixin請採用以下方法" class="headerlink" title="以上為局部mixin，如要採用全局mixin請採用以下方法"></a>以上為局部mixin，如要採用全局mixin請採用以下方法</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;a&#125; <span class="keyword">from</span> <span class="string">&#x27;./mixin.js&#x27;</span></span><br><span class="line">...</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">mixin</span>(a)<span class="comment">//vm及vc都會得到此mixin內容</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/" data-id="clb53d78i0000rgv80ieh2y3v" data-title="Vue筆記 - mixin屬性" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue筆記 - props屬性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/11/26/JavaScript%E5%85%A5%E9%96%8002/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript入門02 (變數)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/Vue-ref%E5%B1%AC%E6%80%A7/">Vue筆記 - ref屬性</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/">Vue筆記 - props屬性</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/">Vue筆記 - mixin屬性</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/26/JavaScript%E5%85%A5%E9%96%8002/">JavaScript入門02 (變數)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

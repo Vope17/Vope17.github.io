@@ -71,6 +71,159 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Vue-ref屬性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/01/Vue-ref%E5%B1%AC%E6%80%A7/" class="article-date">
+  <time class="dt-published" datetime="2022-12-01T07:49:27.000Z" itemprop="datePublished">2022-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/01/Vue-ref%E5%B1%AC%E6%80%A7/">Vue筆記 - ref屬性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="ref屬性"><a href="#ref屬性" class="headerlink" title="ref屬性"></a>ref屬性</h1><hr>
+<h3 id="ref與id的功能差不多，"><a href="#ref與id的功能差不多，" class="headerlink" title="ref與id的功能差不多，"></a>ref與id的功能差不多，</h3><h3 id="原生html用id，Vue裡用ref"><a href="#原生html用id，Vue裡用ref" class="headerlink" title="原生html用id，Vue裡用ref"></a>原生html用id，Vue裡用ref</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="應用在html標籤上獲得真實DOM，"><a href="#應用在html標籤上獲得真實DOM，" class="headerlink" title="應用在html標籤上獲得真實DOM，"></a>應用在html標籤上獲得真實DOM，</h3><h3 id="在組件標籤上獲得組件實例對象-vc"><a href="#在組件標籤上獲得組件實例對象-vc" class="headerlink" title="在組件標籤上獲得組件實例對象(vc)"></a>在組件標籤上獲得組件實例對象(vc)</h3><hr>
+<h5 id="使用方法：this-refs-上方給的ref標示"><a href="#使用方法：this-refs-上方給的ref標示" class="headerlink" title="使用方法：this.$refs.(上方給的ref標示)"></a>使用方法：this.$refs.(上方給的ref標示)</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- TestA為子組件 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">TestA</span> <span class="attr">ref</span>=<span class="string">&quot;B&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showup&quot;</span>&gt;</span>showup<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="attr">components</span>: &#123;</span><br><span class="line">    <span class="title class_">TestA</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">showup</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">B</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<style>
+</style>
+<pre><code>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/01/Vue-ref%E5%B1%AC%E6%80%A7/" data-id="clb51ouro0004ugv80srj7p4z" data-title="Vue筆記 - ref屬性" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Vue-props屬性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/" class="article-date">
+  <time class="dt-published" datetime="2022-12-01T07:49:27.000Z" itemprop="datePublished">2022-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/">Vue筆記 - props屬性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="props屬性"><a href="#props屬性" class="headerlink" title="props屬性"></a>props屬性</h1><hr>
+<h2 id="功能：讓組件接收外部傳進來的數據"><a href="#功能：讓組件接收外部傳進來的數據" class="headerlink" title="功能：讓組件接收外部傳進來的數據"></a>功能：讓組件接收外部傳進來的數據</h2><ul>
+<li><h2 id="Step1-傳遞數據-父組件呼叫時傳入"><a href="#Step1-傳遞數據-父組件呼叫時傳入" class="headerlink" title="Step1.傳遞數據: (父組件呼叫時傳入)"></a>Step1.傳遞數據: (父組件呼叫時傳入)</h2>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">demo name=<span class="string">&#x27;xxx&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><h2 id="Step2-接收數據-子組件宣告"><a href="#Step2-接收數據-子組件宣告" class="headerlink" title="Step2.接收數據: (子組件宣告)"></a>Step2.接收數據: (子組件宣告)</h2><ul>
+<li><h3 id="1-只接收"><a href="#1-只接收" class="headerlink" title="1.(只接收)"></a>1.(只接收)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="attr">props</span>:[<span class="string">&#x27;name&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="2-限制類型"><a href="#2-限制類型" class="headerlink" title="2.(限制類型)"></a>2.(限制類型)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="title class_">Number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="3-限制類型、限制必要性、指定默認值"><a href="#3-限制類型、限制必要性、指定默認值" class="headerlink" title="3.(限制類型、限制必要性、指定默認值)"></a>3.(限制類型、限制必要性、指定默認值)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">    <span class="attr">name</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">String</span></span><br><span class="line">        <span class="attr">required</span>:<span class="literal">true</span></span><br><span class="line">        <span class="attr">default</span>:<span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="props是只讀的-Vue底層會監測你對props的修改-如果進行了修改-會發出警告-如果需要修改請採用以下方法"><a href="#props是只讀的-Vue底層會監測你對props的修改-如果進行了修改-會發出警告-如果需要修改請採用以下方法" class="headerlink" title="props是只讀的,Vue底層會監測你對props的修改,如果進行了修改,會發出警告,如果需要修改請採用以下方法"></a><strong>props是只讀的,Vue底層會監測你對props的修改,如果進行了修改,會發出警告,如果需要修改請採用以下方法</strong></h2><pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html or template--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&#x27;change&#x27;</span>&gt;</span>&#123;&#123;myage&#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//script</span></span><br><span class="line">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            <span class="attr">myage</span>:<span class="variable language_">this</span>.<span class="property">age</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>:&#123;</span><br><span class="line">        <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">myage</span>++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">props</span>:[<span class="string">&#x27;age&#x27;</span>]</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="props的優先級大於data-故用新變數myage去接收props的age"><a href="#props的優先級大於data-故用新變數myage去接收props的age" class="headerlink" title="props的優先級大於data,故用新變數myage去接收props的age"></a>props的優先級大於data,故用新變數myage去接收props的age</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/" data-id="clb51p0ut0006ugv8hq393ito" data-title="Vue筆記 - props屬性" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Vue-mixin屬性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/" class="article-date">
+  <time class="dt-published" datetime="2022-12-01T07:49:27.000Z" itemprop="datePublished">2022-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/">Vue筆記 - mixin屬性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mixin混入"><a href="#mixin混入" class="headerlink" title="mixin混入"></a>mixin混入</h1><hr>
+<h2 id="功能：將複用率高的代碼混入以減少代碼重複率"><a href="#功能：將複用率高的代碼混入以減少代碼重複率" class="headerlink" title="功能：將複用率高的代碼混入以減少代碼重複率"></a>功能：將複用率高的代碼混入以減少代碼重複率</h2><ul>
+<li><h2 id="Step1-創建mixin-js-新增export代碼"><a href="#Step1-創建mixin-js-新增export代碼" class="headerlink" title="Step1.創建mixin.js,新增export代碼"></a>Step1.創建mixin.js,新增export代碼</h2>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mixin.js (自定義檔名)</span></span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">const</span> a&#123;</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">showname</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="Step2-引入至組件"><a href="#Step2-引入至組件" class="headerlink" title="Step2.引入至組件"></a>Step2.引入至組件</h2><ul>
+<li><h3 id="1-import-物件名稱-from-路徑位址"><a href="#1-import-物件名稱-from-路徑位址" class="headerlink" title="1.import {物件名稱} from 路徑位址"></a>1.import {物件名稱} from 路徑位址</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;a&#125; <span class="keyword">from</span> <span class="string">&#x27;../mixin.js&#x27;</span> <span class="comment">//路徑位址</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="2-新增mixins數組項-內部填入上面的物件名稱"><a href="#2-新增mixins數組項-內部填入上面的物件名稱" class="headerlink" title="2.新增mixins數組項,內部填入上面的物件名稱"></a>2.新增mixins數組項,內部填入上面的物件名稱</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="attr">mixins</span>:[</span><br><span class="line">    a</span><br><span class="line">]</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+<li><h3 id="3-此時在引入之組件內即可使用’a’的內容物"><a href="#3-此時在引入之組件內即可使用’a’的內容物" class="headerlink" title="3.此時在引入之組件內即可使用’a’的內容物"></a>3.此時在引入之組件內即可使用’a’的內容物</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> @<span class="attr">click</span>=<span class="string">&#x27;showname&#x27;</span>&gt;</span>點我彈出小明<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="如果組件內已經有相同名稱的data-methods，則以組件的data-methods為主‧而mounted則都會觸發。"><a href="#如果組件內已經有相同名稱的data-methods，則以組件的data-methods為主‧而mounted則都會觸發。" class="headerlink" title="如果組件內已經有相同名稱的data,methods，則以組件的data,methods為主‧而mounted則都會觸發。"></a><strong>如果組件內已經有相同名稱的data,methods，則以組件的data,methods為主‧而mounted則都會觸發。</strong></h2><h2 id="以上為局部mixin，如要採用全局mixin請採用以下方法"><a href="#以上為局部mixin，如要採用全局mixin請採用以下方法" class="headerlink" title="以上為局部mixin，如要採用全局mixin請採用以下方法"></a>以上為局部mixin，如要採用全局mixin請採用以下方法</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;a&#125; <span class="keyword">from</span> <span class="string">&#x27;./mixin.js&#x27;</span></span><br><span class="line">...</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">mixin</span>(a)<span class="comment">//vm及vc都會得到此mixin內容</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/" data-id="clb53d78i0000rgv80ieh2y3v" data-title="Vue筆記 - mixin屬性" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-JavaScript入門02" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/26/JavaScript%E5%85%A5%E9%96%8002/" class="article-date">
@@ -114,113 +267,6 @@
 
 
   
-    <article id="post-Js" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/25/Js/" class="article-date">
-  <time class="dt-published" datetime="2022-11-25T07:49:27.000Z" itemprop="datePublished">2022-11-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/25/Js/">JavaScript入門01 (console.log)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>簡單的網頁由：HTML、CSS、及JavaScript組成。</p>
-<p>HTML就像一個人的身體，而CSS就是人的外觀(例如：長相、眼鏡、衣服等等……)、JavaScript像是人的行為動作(以下以JS簡稱)。</p>
-<p>一個網頁可以只由HTML組成，但想要有豐富的內容就需要CSS與JS去做點綴。</p>
-<p>以下內容需要對HTML有基礎的了解即可開始：</p>
-<p>前置作業：</p>
-<p>01.使用VScode：輕量級的IDE</p>
-<p>02.Live Server：在VScode裡的擴充模組，安裝後點選右下的Go Live開啟網頁後，會進行即時的內容增減，不需要將網頁存檔後重新開啟。</p>
-<h1 id="01-HelloWorld"><a href="#01-HelloWorld" class="headerlink" title="01.HelloWorld!"></a>01.HelloWorld!</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Helloworld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;helloworld&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>打開網站後按下F12打開Console介面即可看到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helloworld</span><br></pre></td></tr></table></figure>
-<p>想要在HTML去使用JS需要使用script標籤</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">   </span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;helloworld&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>console.log為JS的關鍵字，是一個可以顯示所指定的內容。</p>
-<p>有人可能會好奇，為何不是直接將內容顯示在網頁上，而是需要打開主控台去查看console?</p>
-<p>JS是可以將內容顯示在網頁上的，但需要跟HTML做互動，會在未來做介紹。</p>
-<p>因此在這階段，我們以JS的語法開始，只需要先知道我們所製造出來的內容是否符合我們的預期即可(用console.log查看)。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/25/Js/" data-id="clb46lacs0000jsv83p68ezf9" data-title="JavaScript入門01 (console.log)" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-11-25T07:48:12.111Z" itemprop="datePublished">2022-11-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/25/hello-world/">Hello World  AAAAAA</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">111</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/25/hello-world/" data-id="clb46lad20003jsv8gspb3j67" data-title="Hello World  AAAAAA" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
@@ -234,7 +280,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
     </div>
   </div>
 
@@ -244,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a>
+      <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a>
     </div>
   </div>
 
@@ -253,7 +299,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
     </div>
   </div>
 
@@ -266,15 +312,19 @@
       <ul>
         
           <li>
+            <a href="/2022/12/01/Vue-ref%E5%B1%AC%E6%80%A7/">Vue筆記 - ref屬性</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/01/Vue-props%E5%B1%AC%E6%80%A7/">Vue筆記 - props屬性</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/01/Vue-mixin%E5%B1%AC%E6%80%A7/">Vue筆記 - mixin屬性</a>
+          </li>
+        
+          <li>
             <a href="/2022/11/26/JavaScript%E5%85%A5%E9%96%8002/">JavaScript入門02 (變數)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/25/Js/">JavaScript入門01 (console.log)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/25/hello-world/">Hello World  AAAAAA</a>
           </li>
         
       </ul>
